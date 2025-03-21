@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>How to Share Newegg Cart</title>
+    <meta
+      name="description"
+      content="Learn how to share your shopping cart on Newegg! Share with friends, family, or co-workers in one click."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full w-full text-stone-900 max-w-3xl mx-auto">
+    <div class="min-h-[97vh] py-10 px-3">
+      <div class="flex gap-3">
+        <a class="hover:opacity-80" href="/">
+          <img
+            src="../images/logo.png"
+            width="64px"
+            height="64px"
+            alt="Share Carts"
+          />
+        </a>
+        <div class="mt-1">
+          <span class="text-2xl font-semibold tracking-tight hover:opacity-80">
+            <a href="/">Share Carts</a>
+          </span>
+          <p>Share links to your shopping cart</p>
+        </div>
+      </div>
+      <div class="my-5 border-dotted border-t-4"></div>
+      <!-- MAIN CONTENT HERE -->
+      <div class="flex gap-2 justify-center">
+        <img
+          class="hidden sm:block object-scale-down"
+          src="../images/newegg.png"
+          alt="Share Carts on Newegg"
+        />
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight pb-1">
+          How to Share Your Newegg Cart
+        </h1>
+      </div>
+      <div class="mt-1 text-stone-500 text-center text-sm">
+        Last Updated: February 9th, 2025
+      </div>
+      <div class="bg-stone-50 p-4 rounded-md mt-10 shadow">
+        <p>
+          <span class="italic">Newegg</span> is an online retailer specializing
+          in computer hardware, electronics, and gaming products. It’s popular
+          for selling PC components, laptops, gaming peripherals, and DIY
+          PC-building parts like graphics cards, processors, and motherboards.
+        </p>
+        <h2 class="mt-2">
+          In this guide, we will walk you through every step needed to share
+          your <span class="italic">Newegg</span> cart with anyone!
+        </h2>
+        <span class="block mt-5 mb-5 text-xl font-bold"
+          >Step 1: Add items to your Newegg cart</span
+        >
+        <span class="">Here is an example cart:</span>
+        <ol class="list-decimal pl-6 mt-1">
+          <li class="p-1">
+            <a
+              class="underline font-semibold hover:opacity-80"
+              href="https://www.newegg.com/intel-core-i7-14700k-core-i7-14th-gen-raptor-lake-lga-1700-desktop-processor/p/N82E16819118466?Item=N82E16819118466"
+              target="_blank"
+              >Intel Core i7-14700K - Core i7 14th Gen 20-Core (8P+12E) LGA 1700
+              125W Intel UHD Graphics 770 Processor</a
+            >
+          </li>
+          <li class="p-1">
+            <a
+              class="underline font-semibold hover:opacity-80"
+              href="https://www.newegg.com/aoace-the-sea-view-room-is-on-the-side-gaming-desktop-geforce-rtx-4060-intel-core-i5-12400f-32gb-ddr4-1tb-ssd-gl02-black/p/3D5-006C-00001"
+              target="_blank"
+              >AOACE Gaming PC Desktop INTEL Core i5 12400F 2.5 GHz, NVIDIA RTX
+              4060 8G DLSS 3, 32GB DDR4 RAM 3200MHz,1TB NVMe PCIe4.0, Wi-Fi6E,
+              Game Design Office console,Sea View Room,Windows 11 Home 64-bit</a
+            >
+          </li>
+          <li class="p-1">
+            <a
+              class="underline font-semibold hover:opacity-80"
+              href="https://www.newegg.com/msi-thin-a15-b8vf-270us-15-6-amd-ryzen-9-8945hs-16gb-geforce-rtx-4060-1tb-pcie-black/p/N82E16834156648"
+              target="_blank"
+              >MSI - 15.6" GeForce RTX 4060 Laptop GPU - AMD Ryzen 9 8945HS -
+              16GB Memory - 1 TB PCIe SSD</a
+            >
+          </li>
+          <li class="p-1">
+            <a
+              class="underline font-semibold hover:opacity-80"
+              href="https://www.newegg.com/capcom-monster-hunter-wilds/p/N82E16832233291?Item=N82E16832233291"
+              target="_blank"
+              >Monster Hunter Wilds - PC</a
+            >
+          </li>
+          <li class="p-1">
+            <a
+              class="underline font-semibold hover:opacity-80"
+              href="https://www.newegg.com/sega-yakuza-like-a-dragon-legendary-hero-edition-pc/p/N82E16832203394?Item=N82E16832203394"
+              target="_blank"
+              >Yakuza: Like a Dragon Legendary Hero Edition for PC
+            </a>
+          </li>
+        </ol>
+        <span class="block mt-5 mb-5 text-xl font-bold"
+          >Step 2: Construct the share link</span
+        >
+        <p>
+          For <span class="font-semibold">each</span> item in your cart, append the
+          <span
+            class="block bg-white rounded p-3 border-2 border-dashed mt-2 overflow-clip overflow-y-auto break-words select-all"
+          >
+            <span class="italic">PRODUCT ID</span>|<span class="italic"
+              >Quantity</span
+            >
+          </span>
+          (seperated with ,) parameter to the end of this URL:
+        </p>
+        <div
+          class="bg-white rounded p-3 border-2 border-dashed mt-2 overflow-clip overflow-y-auto break-words select-all"
+        >
+          https://secure.newegg.com/Shopping/AddToCart.aspx?Submit=ADD&ItemList=
+        </div>
+        <p class="mt-1">
+          Using the example cart above, the final share URL is:
+        </p>
+        <div
+          class="bg-white rounded p-3 border-2 border-dashed mt-2 overflow-clip overflow-y-auto break-words select-all"
+        >
+          https://secure.newegg.com/Shopping/AddToCart.aspx?Submit=ADD&ItemList=N82E16819118466|1,N82E16832203394|1,N82E16832233291|1,N82E16834156648|1,9SIBV1MK713275|1
+        </div>
+        <span class="block mt-5 mb-5 text-xl font-bold"
+          >Step 3: Send the link</span
+        >
+        <p>
+          🔗 Send the link via SMS, email, social media, or anywhere you can
+          paste a link! You could send this to family letting them know what to
+          buy for the holidays.
+        </p>
+        <p class="mt-1">
+          ✅ Rather than sharing product links separately, you can now you can
+          share them together as a single collection.
+        </p>
+        <h3 class="mt-5 mb-5 text-xl font-bold border-t pt-4">
+          Frequently Asked Questions
+        </h3>
+        <p class="mt-3 font-semibold">Why isn't the link working?</p>
+        <p>
+          Occasionally, you may run into hiccups while trying to construct your
+          link. Use this
+          <a
+            class="underline hover:opacity-80"
+            href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
+            target="_blank"
+            >free tool ↗</a
+          >
+          to generate the correct cart link automatically.
+        </p>
+        <p class="mt-3 font-semibold">How many items can I send?</p>
+        <p>
+          There is no limit to how many total items you can send using the share
+          link. It works on all desktop & mobile browsers.
+        </p>
+        <p class="mt-3 font-semibold">Which locales are supported?</p>
+        <span class="italic">Newegg</span> United States
+        <a
+          class="underline hover:opacity-80"
+          href="https://newegg.com"
+          target="_blank"
+          >https://newegg.com ↗</a
+        >
+        and Canada
+        <a
+          class="underline hover:opacity-80"
+          href="https://newegg.ca"
+          target="_blank"
+          >https://newegg.ca ↗</a
+        >
+        are supported for cart sharing.
+        <p class="mt-3 font-semibold">Does my Newegg cart link stay updated?</p>
+        <p>
+          No, links to your <span class="italic">Newegg</span> cart don't stay
+          updated. If you change the items in your cart, you should use the same
+          process in this guide to create a new cart link.
+        </p>
+      </div>
+    </div>
+    <p class="p-3 text-xs text-center text-stone-500">
+      *Share Carts may receive affiliate commissions for purchases made through
+      links on this website
+    </p>
+    <footer class="p-3 text-xs font-normal border-t">
+      <span>
+        © Share Carts, 2025 |
+        <a class="underline" href="mailto:support@sharecarts.com">Contact Us</a>
+        |
+        <a class="underline" href="/privacy.html" target="_blank"
+          >Privacy Policy</a
+        >
+      </span>
+    </footer>
+  </body>
+</html>
