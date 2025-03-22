@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Continue to Amazon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full w-full text-stone-900 max-w-3xl mx-auto">
+    <div class="min-h-[97vh] py-10 px-3">
+      <div class="flex gap-3">
+        <a class="hover:opacity-80" href="/">
+          <img
+            src="images/logo.png"
+            width="64px"
+            height="64px"
+            alt="Share Carts on Amazon & More"
+          />
+        </a>
+        <div class="mt-1">
+          <h1 class="text-2xl font-semibold tracking-tight hover:opacity-80">
+            <a href="/">Share Carts</a>
+          </h1>
+          <p>Share links to your shopping cart</p>
+        </div>
+      </div>
+      <div class="my-5 border-dotted border-t-4"></div>
+      <div class="bg-stone-50 p-8 rounded-md mt-10 shadow">
+        <span class="text-3xl font-extrabold block text-center tracking-light"
+          >Amazon Cart <span class="font-semibold">(5 items)</span></span
+        >
+        <a
+          id="amz"
+          href="https://amazon.com"
+          class="cursor-pointer mt-8 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg"
+        >
+          Continue to Amazon →
+        </a>
+      </div>
+    </div>
+    <p class="text-xs text-center text-stone-500 mb-2">
+      As an Amazon Associate I earn from qualifying purchases.
+    </p>
+    <footer class="p-1 text-xs font-normal border-t">
+      <span>
+        © Share Carts, 2025 |
+        <a class="underline" href="mailto:support@sharecarts.com">Contact Us</a>
+        |
+        <a class="underline" href="/privacy.html" target="_blank"
+          >Privacy Policy</a
+        >
+      </span>
+    </footer>
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      let url = params.get("u");
+      const associateTag = "sharecarts0c-20";
+      if (url) {
+        url = `${decodeURI(url)}&AssociateTag=${associateTag}`;
+        document.querySelector("#amz").setAttribute("href", url);
+      }
+    </script>
+  </body>
+</html>
