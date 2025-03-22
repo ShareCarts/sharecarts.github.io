@@ -27,7 +27,10 @@
       <div class="my-5 border-dotted border-t-4"></div>
       <div class="bg-stone-50 p-8 rounded-md mt-10 shadow">
         <span class="text-3xl font-extrabold block text-center tracking-light"
-          >Amazon Cart <span class="font-semibold">(5 items)</span></span
+          >Amazon Cart
+          <span class="font-semibold"
+            >(<span id="quantity"></span> items)</span
+          ></span
         >
         <a
           id="amz"
@@ -58,6 +61,16 @@
       if (url) {
         url = `${decodeURI(url)}&AssociateTag=${associateTag}`;
         document.querySelector("#amz").setAttribute("href", url);
+        // parse total items
+        let quantity = 0;
+        const parts = url.split("&");
+        for (let part of parts) {
+          if (part.includes("Quantity")) {
+            quantity =
+              quantity + parseInt(part.substring(part.indexOf("=") + 1));
+          }
+        }
+        document.querySelector("#quantity").textContent = quantity;
       }
     </script>
   </body>
