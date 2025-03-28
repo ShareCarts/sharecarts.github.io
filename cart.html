@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="font-[Inter]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Continue to Amazon</title>
+    <meta property="og:title" content="Continue to Amazon" />
+    <meta property="og:description" content="Shareable Amazon Cart Link" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M2TZ6RBVLX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-M2TZ6RBVLX");
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full w-full max-w-3xl mx-auto">
+    <div class="min-h-[97vh] py-4 px-3">
+      <div class="flex gap-2">
+        <a class="hover:opacity-80" href="/">
+          <img
+            src="images/logo.png"
+            width="60px"
+            height="60px"
+            alt="Share Carts"
+          />
+        </a>
+        <div class="mt-3">
+          <a
+            class="text-lg font-semibold tracking-tight hover:opacity-80 leading-3"
+            href="/"
+            >Share Carts</a
+          >
+          <span class="text-xs block leading-3"
+            >Share links to your shopping cart
+          </span>
+        </div>
+      </div>
+      <div class="my-5 border-t"></div>
+      <div
+        class="bg-amber-50 p-10 rounded-md mt-10 shadow-sm border-2 border-dashed border-amber-100"
+      >
+        <span
+          class="text-amber-950 text-4xl sm:text-5xl font-extrabold block text-center tracking-light"
+          >Amazon Cart
+        </span>
+        <p
+          id="quantity"
+          class="text-center mt-6 text-amber-950 text-xl sm:text-2xl"
+        ></p>
+        <a
+          id="amz"
+          href="https://amazon.com"
+          class="cursor-pointer mt-3 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl"
+        >
+          Continue to Amazon<span id="tld"></span> →
+        </a>
+        <span
+          id="copyButton"
+          class="cursor-pointer mt-3 rounded-xl block text-center font-medium bg-stone-800 hover:bg-stone-900 px-4 py-3 text-white text-lg"
+        >
+          Copy Link
+        </span>
+      </div>
+    </div>
+    <p class="text-xs text-center text-stone-500 mb-2">
+      As an Amazon Associate I earn from qualifying purchases.
+    </p>
+    <footer class="p-3 text-xs font-normal border-t">
+      <span>
+        © Share Carts, 2025 |
+        <a class="underline" href="mailto:support@sharecarts.com">Contact Us</a>
+        |
+        <a class="underline" href="/privacy.html" target="_blank"
+          >Privacy Policy</a
+        >
+      </span>
+    </footer>
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      const copyButton = document.querySelector("#copyButton");
+      const amz = document.querySelector("#amz");
+      const tld = document.querySelector("#tld");
+
+      let url = params.get("u");
+      const associateTag = "sharecarts0c-20";
+      if (url) {
+        url = `${decodeURI(url)}AssociateTag=${associateTag}`;
+        amz.setAttribute("href", url); // update url
+        tld.textContent = `.${new URL(decodeURI(url)).host.split(".").pop()}`; // update tld
+        // parse total items
+        let quantity = 0;
+        const parts = url.split("&");
+        for (let part of parts) {
+          if (part.includes("Quantity")) {
+            quantity =
+              quantity + parseInt(part.substring(part.indexOf("=") + 1));
+          }
+        }
+        if (quantity == 1) {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${quantity} shared item`;
+        } else {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${quantity} shared items`;
+        }
+      }
+
+      copyButton.addEventListener("click", async (event) => {
+        await navigator.clipboard.writeText(window.location.href);
+        copyButton.textContent = "Copied!";
+      });
+    </script>
+  </body>
+</html>
