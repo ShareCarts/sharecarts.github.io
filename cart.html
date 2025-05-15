@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="font-[Inter]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Continue to Amazon</title>
+    <meta property="og:title" content="Continue to Amazon" />
+    <meta property="og:description" content="Shareable Amazon Cart Link" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M2TZ6RBVLX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-M2TZ6RBVLX");
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full w-full max-w-3xl mx-auto">
+    <div class="min-h-[97vh] py-4 px-3">
+      <div class="flex justify-between">
+        <div class="flex gap-2">
+          <a class="hover:opacity-80" href="/">
+            <img
+              src="../images/logo.png"
+              width="60px"
+              height="60px"
+              alt="Share Carts"
+            />
+          </a>
+          <div class="mt-3">
+            <a
+              class="text-lg font-semibold tracking-tight hover:opacity-80 leading-3"
+              href="/"
+              >Share Carts</a
+            >
+            <span class="text-xs block leading-3"
+              >Share links to your shopping cart
+            </span>
+          </div>
+        </div>
+        <div class="mt-3 hidden sm:block">
+          <a
+            class="inline-flex h-10 items-center justify-center rounded-xl bg-gradient-to-r from-green-400 to-blue-500 px-6 text-sm font-medium text-white shadow transition-colors hover:from-green-500 hover:to-blue-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+            href="https://chromewebstore.google.com/detail/bkcdmpcbhmafdmpekienmgfopacinonn"
+            target="_blank"
+            ><img
+              alt="Chrome Extension"
+              loading="lazy"
+              width="24"
+              height="24"
+              class="mr-2"
+              src="/images/chrome.svg"
+            />Create New Cart</a
+          >
+        </div>
+      </div>
+      <div class="my-5 border-t"></div>
+      <div
+        class="bg-amber-50 p-10 rounded-md mt-10 shadow-sm border-2 border-dashed border-amber-100"
+      >
+        <span
+          class="text-amber-950 text-4xl sm:text-5xl font-extrabold block text-center tracking-light"
+          >Amazon Cart
+        </span>
+        <p
+          id="quantity"
+          class="text-center mt-6 text-amber-950 text-xl sm:text-2xl"
+        ></p>
+
+        <!-- Regular AMAZON -->
+        <a
+          id="amz"
+          href="https://amazon.com"
+          class="cursor-pointer w-full mt-3 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl"
+        >
+          Continue to Amazon<span id="tld"></span> →
+        </a>
+
+        <!-- Fresh or WF -->
+        <form id="freshWF" class="hidden" method="POST" action="">
+          <input type="hidden" id="ingredients" name="ingredients" value="" />
+          <input type="hidden" id="almBrandId" name="almBrandId" value="" />
+          <input type="hidden" id="tag" name="associateTag" value="" />
+          <input
+            type="submit"
+            class="cursor-pointer mt-3 w-full rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl"
+            value=""
+          />
+        </form>
+
+        <span
+          id="copyButton"
+          class="cursor-pointer mt-3 rounded-xl block text-center font-medium bg-stone-800 hover:bg-stone-900 px-4 py-3 text-white text-lg"
+        >
+          Copy Link
+        </span>
+      </div>
+      <div
+        id="note"
+        class="hidden mt-5 p-4 bg-stone-50 rounded-md shadow-sm border border-dashed border-stone-100 text-sm"
+      >
+        <span class="italic">Note</span>:
+        <span id="noteMessage"></span>
+      </div>
+      <div
+        class="flex justify-around gap-x-2 mt-4 px-3 py-2 w-full font-medium text-xs *:tracking-tight"
+      >
+        <a
+          id="faq"
+          target="_blank"
+          class="hover:underline"
+          href="https://sharecarts.com/how-to/share-amazon-cart.html#faq"
+        >
+          FAQs
+        </a>
+        <a
+          target="_blank"
+          class="hover:underline"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform"
+        >
+          Help & Feedback
+        </a>
+        <a
+          target="_blank"
+          class="relative hover:underline"
+          href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn/reviews"
+          >Rate us!</a
+        >
+      </div>
+    </div>
+    <p class="text-xs text-center text-stone-500 mb-2">
+      As an Amazon Associate I earn from qualifying purchases.
+    </p>
+    <footer class="p-3 text-xs font-normal border-t">
+      <span>
+        © Share Carts, 2025 |
+        <a class="underline" href="mailto:support@sharecarts.com">Contact Us</a>
+        |
+        <a class="underline" href="/privacy.html" target="_blank"
+          >Privacy Policy</a
+        >
+      </span>
+    </footer>
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      let url = params.get("u");
+      url = decodeURI(url);
+      const parts = new URL(url).searchParams;
+      const noteParam = params.get("note");
+
+      let associateTag = window.location.href.includes("sharecarts.com")
+        ? "sharecarts0c-20"
+        : "none";
+
+      if (new URL(url).hostname == "www.amazon.in") {
+        associateTag = "test";
+      }
+
+      const amz = document.querySelector("a#amz");
+      const freshWF = document.querySelector("form#freshWF");
+
+      function main() {
+        if (
+          new URL(url).pathname.includes("fresh") ||
+          new URL(url).pathname.includes("wf")
+        ) {
+          branded();
+          return;
+        }
+
+        url = `${url}AssociateTag=${associateTag}`;
+        amz.setAttribute("href", url); // update url
+
+        let tld = document.querySelector("#tld");
+        if (new URL(url).hostname.split(".").length > 3) {
+          tld.textContent = `.${new URL(url).hostname.split(".")[2]}.${new URL(
+            url
+          ).hostname
+            .split(".")
+            .pop()}`; // update tld
+        } else {
+          tld.textContent = `.${new URL(url).hostname.split(".").pop()}`; // update tld
+        }
+
+        // parse total items
+        let totalQuantity = 0;
+        parts.forEach((value, key) => {
+          if (key.includes("Quantity")) {
+            totalQuantity = totalQuantity + parseInt(value);
+          }
+        });
+
+        if (totalQuantity == 1) {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${totalQuantity} shared item`;
+        } else {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${totalQuantity} shared items`;
+        }
+      }
+
+      function branded() {
+        const payload = {
+          ingredients: [],
+          saved: false,
+          recipeComposition: {
+            saved: false,
+          },
+        };
+        let id;
+        let brandName;
+        const locale = new URL(url).hostname;
+        const faq = document.querySelector("#faq");
+        if (new URL(url).pathname.includes("fresh")) {
+          if (locale == "www.amazon.in") {
+            id = "ctnow";
+          } else {
+            id = "QW1hem9uIEZyZXNo";
+          }
+          brandName = "Fresh";
+          faq.href =
+            "https://sharecarts.com/how-to/share-amazon-fresh-cart.html#faq";
+        } else {
+          id = "VUZHIFdob2xlIEZvb2Rz";
+          brandName = "Whole Foods";
+          faq.href =
+            "https://sharecarts.com/how-to/share-amazon-whole-foods-cart.html#faq";
+        }
+        const almBrandId = document.querySelector("#almBrandId");
+        const ingredients = document.querySelector("#ingredients");
+        const tag = document.querySelector("#tag");
+
+        // update state
+        document.title = `${document.title} ${brandName}`;
+        document.querySelector(
+          'input[type="submit"]'
+        ).value = `Continue to Amazon ${brandName} →`;
+        amz.classList.add("hidden");
+        freshWF.classList.remove("hidden");
+
+        // parse items
+        let index = 0;
+        let totalQuantity = 0;
+        parts.forEach((value, key) => {
+          if (key.includes("ASIN")) {
+            payload.ingredients.push({
+              name: "Of This Item",
+              asinOverrides: [value],
+              componentIndex: 0,
+              quantityList: [
+                {
+                  unit: "COUNT",
+                  amount: 1,
+                },
+              ],
+              exclusiveOverride: false,
+            });
+          }
+        });
+
+        parts.forEach((value, key) => {
+          if (key.includes("Quantity")) {
+            payload.ingredients[index].quantityList[0].amount = parseInt(value);
+            totalQuantity = totalQuantity + parseInt(value);
+            index++;
+          }
+        });
+
+        if (totalQuantity == 1) {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${totalQuantity} shared item`;
+        } else {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${totalQuantity} shared items`;
+        }
+
+        // update form
+        freshWF.action = `https://${locale}/afx/ingredients/landing`;
+        almBrandId.value = id;
+        ingredients.value = JSON.stringify(payload);
+        tag.value = associateTag;
+      }
+
+      if (url) {
+        main();
+      }
+
+      // NOTE
+      if (noteParam) {
+        const note = document.querySelector("#note");
+        const noteMessage = document.querySelector("#noteMessage");
+        note.classList.remove("hidden");
+        noteMessage.textContent = decodeURIComponent(noteParam);
+      }
+
+      // COPY ACTION
+      const copyButton = document.querySelector("#copyButton");
+      copyButton.addEventListener("click", async (event) => {
+        await navigator.clipboard.writeText(window.location.href);
+        copyButton.textContent = "Copied!";
+      });
+    </script>
+  </body>
+</html>
