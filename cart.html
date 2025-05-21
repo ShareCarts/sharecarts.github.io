@@ -73,17 +73,15 @@
           class="text-amber-950 text-4xl sm:text-5xl font-extrabold block text-center tracking-light"
           >Amazon Cart
         </span>
-        <p
-          id="quantity"
-          class="text-center mt-6 text-amber-950 text-xl"
-        ></p>
+        <p id="quantity" class="text-center mt-6 text-amber-950 text-xl"></p>
 
         <!-- Regular AMAZON -->
         <a
           id="amz"
           href="https://amazon.com"
           class="cursor-pointer w-full mt-3 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl after:content-['_➜']"
-        >Continue to Amazon<span id="tld"></span></a>
+          >Continue to Amazon<span id="tld"></span
+        ></a>
 
         <!-- Fresh or WF -->
         <form id="freshWF" class="hidden" method="POST" action="">
@@ -158,52 +156,52 @@
       const noteParam = params.get("note");
       const localMarkets = {
         // US
-        QW1hem9uIEZyZXNo: 'Fresh',
-        VUZHIFdob2xlIEZvb2Rz: 'Whole Foods',
-        cfr1WQ8obY: 'Everyday Essentials',
-        hJDG4SCSoK: 'Metropolitan Market',
-        U2F2ZSBNYXJ0: 'Save Mart',
-        WPcGbYPLzk: 'Rite Aid',
-        WQppp1xWMK: 'Lucky',
-        RDMXfFItJA: 'Cardenas Market',
-        hY0j6LN5aS: 'New Seasons Market',
-        pNHniBOEyG: 'Foodmaxx',
-        YnJpc3RvbCBmYXJtcw: 'Bristol Farms',
+        QW1hem9uIEZyZXNo: "Fresh",
+        VUZHIFdob2xlIEZvb2Rz: "Whole Foods",
+        cfr1WQ8obY: "Everyday Essentials",
+        hJDG4SCSoK: "Metropolitan Market",
+        U2F2ZSBNYXJ0: "Save Mart",
+        WPcGbYPLzk: "Rite Aid",
+        WQppp1xWMK: "Lucky",
+        RDMXfFItJA: "Cardenas Market",
+        hY0j6LN5aS: "New Seasons Market",
+        pNHniBOEyG: "Foodmaxx",
+        YnJpc3RvbCBmYXJtcw: "Bristol Farms",
         QmFydGVsbCBEcnVncw: "Bartell's",
-        V2VpcyBNYXJrZXRz: 'Weis',
+        V2VpcyBNYXJrZXRz: "Weis",
         // UK
-        TW9ycmlzb25z: 'Morrisons',
-        Q29vcA: 'Coop',
-        ejEjkXsQmO: 'Iceland',
+        TW9ycmlzb25z: "Morrisons",
+        Q29vcA: "Coop",
+        ejEjkXsQmO: "Iceland",
         // Singapore
-        KQENHJywk4: 'Watsons',
-        WDpqStVxNA: 'Little Farms',
+        KQENHJywk4: "Watsons",
+        WDpqStVxNA: "Little Farms",
         // India
-        ctnow: 'Fresh',
-        foq3ZnlEaO: 'FreshMeat',
+        ctnow: "Fresh",
+        foq3ZnlEaO: "FreshMeat",
         // Germany
-        dGVndXQuLi4: 'Tegut',
-        tIldpRhPE0: 'konuspr',
+        dGVndXQuLi4: "Tegut",
+        tIldpRhPE0: "konuspr",
         // France
-        TW9ub3ByaXg: 'Monoprix',
+        TW9ub3ByaXg: "Monoprix",
         // Japan
-        '44OQ44Ot44O8': 'Valor',
-        '44Op44Kk44OV': 'Life',
-        YuevU6kVCi: 'ARCS',
-        '5oiQ5Z1O551z5LqV': 'Seijo Ishii',
-        qg6iObTGYS: 'Marukyo',
+        "44OQ44Ot44O8": "Valor",
+        "44Op44Kk44OV": "Life",
+        YuevU6kVCi: "ARCS",
+        "5oiQ5Z1O551z5LqV": "Seijo Ishii",
+        qg6iObTGYS: "Marukyo",
         // Italy
-        VTIgU3VwZXJtZXJjYXRv: 'Unes',
-        UGFtIFBBTk9SQU1B: 'Pam Panorama',
-        VHVvZMOs: 'Tuodi',
+        VTIgU3VwZXJtZXJjYXRv: "Unes",
+        UGFtIFBBTk9SQU1B: "Pam Panorama",
+        VHVvZMOs: "Tuodi",
         // Spain
-        TWVyY2FkbyBkZSBMYSBQYXo: 'Mercado de la Paz',
-        TGEgUGxhemEgZGUgRGlh: 'Dia',
+        TWVyY2FkbyBkZSBMYSBQYXo: "Mercado de la Paz",
+        TGEgUGxhemEgZGUgRGlh: "Dia",
         // Mexico
-        qhu7HKnZL6: 'Justo',
+        qhu7HKnZL6: "Justo",
         // UAE
-        Wf2HUUZ9yC: 'Lulu',
-        sAuWWBROaG: 'Amazon Now',
+        Wf2HUUZ9yC: "Lulu",
+        sAuWWBROaG: "Amazon Now",
       };
 
       let associateTag = window.location.href.includes("sharecarts.com")
@@ -217,10 +215,28 @@
       const amz = document.querySelector("a#amz");
       const freshWF = document.querySelector("form#freshWF");
 
+      function updateTotalQuantity() {
+        // parse total items
+        let totalQuantity = 0;
+        parts.forEach((value, key) => {
+          if (key.includes("Quantity")) {
+            totalQuantity = totalQuantity + parseInt(value);
+          }
+        });
+
+        if (totalQuantity == 1) {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${totalQuantity} shared item`;
+        } else {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `🛍️ ${totalQuantity} shared items`;
+        }
+      }
+
       function main() {
-        if (
-          !new URL(url).pathname.includes("add.html")
-        ) {
+        if (!new URL(url).pathname.includes("add.html")) {
           branded();
           return;
         }
@@ -239,23 +255,8 @@
           tld.textContent = `.${new URL(url).hostname.split(".").pop()}`; // update tld
         }
 
-        // parse total items
-        let totalQuantity = 0;
-        parts.forEach((value, key) => {
-          if (key.includes("Quantity")) {
-            totalQuantity = totalQuantity + parseInt(value);
-          }
-        });
-
-        if (totalQuantity == 1) {
-          document.querySelector(
-            "#quantity"
-          ).textContent = `🛍️ ${totalQuantity} shared item`;
-        } else {
-          document.querySelector(
-            "#quantity"
-          ).textContent = `🛍️ ${totalQuantity} shared items`;
-        }
+        // update total quantity
+        updateTotalQuantity();
       }
 
       function branded() {
@@ -299,7 +300,6 @@
 
         // parse items
         let index = 0;
-        let totalQuantity = 0;
         parts.forEach((value, key) => {
           if (key.includes("ASIN")) {
             payload.ingredients.push({
@@ -320,20 +320,12 @@
         parts.forEach((value, key) => {
           if (key.includes("Quantity")) {
             payload.ingredients[index].quantityList[0].amount = parseInt(value);
-            totalQuantity = totalQuantity + parseInt(value);
             index++;
           }
         });
 
-        if (totalQuantity == 1) {
-          document.querySelector(
-            "#quantity"
-          ).textContent = `🛍️ ${totalQuantity} shared item`;
-        } else {
-          document.querySelector(
-            "#quantity"
-          ).textContent = `🛍️ ${totalQuantity} shared items`;
-        }
+        // update total quantity
+        updateTotalQuantity();
 
         // update form
         freshWF.action = `https://${locale}/afx/ingredients/landing`;
