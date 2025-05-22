@@ -301,7 +301,7 @@
               quantityList: [
                 {
                   unit: "COUNT",
-                  amount: parseInt(parts.get(`Quantity.${index}`)),
+                  amount: parseInt(parts.get(`Quantity.${index}`) ?? 1),
                 },
               ],
               exclusiveOverride: false,
