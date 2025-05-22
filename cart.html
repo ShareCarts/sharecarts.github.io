@@ -218,11 +218,11 @@
       function updateTotalQuantity() {
         // parse total items
         let totalQuantity = 0;
-        parts.forEach((value, key) => {
+        for (const [key, value] of parts) {
           if (key.includes("Quantity")) {
             totalQuantity = totalQuantity + parseInt(value);
           }
-        });
+        }
 
         if (totalQuantity == 1) {
           document.querySelector(
@@ -290,17 +290,9 @@
         const ingredients = document.querySelector("#ingredients");
         const tag = document.querySelector("#tag");
 
-        // update state
-        document.title = `${document.title} ${brandName}`;
-        document.querySelector(
-          'input[type="submit"]'
-        ).value = `Continue to Amazon ${brandName} ➜`;
-        amz.classList.add("hidden");
-        freshWF.classList.remove("hidden");
-
-        // parse items
-        let index = 0;
-        parts.forEach((value, key) => {
+        // insert ingredients
+        let index = 1;
+        for (const [key, value] of parts) {
           if (key.includes("ASIN")) {
             payload.ingredients.push({
               name: "Of This Item",
@@ -309,29 +301,33 @@
               quantityList: [
                 {
                   unit: "COUNT",
-                  amount: 1,
+                  amount: parseInt(parts.get(`Quantity.${index}`)),
                 },
               ],
               exclusiveOverride: false,
             });
-          }
-        });
-
-        parts.forEach((value, key) => {
-          if (key.includes("Quantity")) {
-            payload.ingredients[index].quantityList[0].amount = parseInt(value);
             index++;
           }
-        });
+        }
 
         // update total quantity
         updateTotalQuantity();
+
+        // switch button
+        amz.classList.add("hidden");
+        freshWF.classList.remove("hidden");
 
         // update form
         freshWF.action = `https://${locale}/afx/ingredients/landing`;
         almBrandId.value = id;
         ingredients.value = JSON.stringify(payload);
         tag.value = associateTag;
+
+        // update meta tags
+        document.title = `${document.title} ${brandName}`;
+        document.querySelector(
+          'input[type="submit"]'
+        ).value = `Continue to Amazon ${brandName} ➜`;
       }
 
       if (url) {
