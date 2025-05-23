@@ -25,6 +25,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   </head>
   <body class="h-full w-full max-w-2xl mx-auto">
     <div class="min-h-[97vh] py-4 px-3">
@@ -70,29 +71,13 @@
         <span id="noteMessage"></span>
       </div>
       <div
-        class="flex justify-around gap-x-2 mt-10 px-3 py-2 w-full font-light text-xs *:tracking-tight"
+        class="mt-10 prose prose-headings:tracking-tight mx-auto prose-sm sm:prose-base prose-stone prose-headings:font-semibold prose-headings:text-center prose-a:text-blue-600 hover:prose-a:text-stone-800"
       >
-        <a
-          id="faq"
-          target="_blank"
-          class="hover:underline"
-          href="https://sharecarts.com/how-to/share-amazon-cart.html#faq"
-        >
-          FAQs
-        </a>
-        <a
-          target="_blank"
-          class="hover:underline"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform"
-        >
-          Help & Feedback
-        </a>
-        <a
-          target="_blank"
-          class="relative hover:underline"
-          href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
-          >Share Amazon Cart</a
-        >
+        <h3>Frequently Asked Questions</h3>
+        <dl>
+            <dt>Does this cart link stay updated or synced?</dt>
+            <dd>No, the link reflects all cart items at the time it was created.</dd>
+        </dl>
       </div>
     </div>
     <p class="text-xs font-light text-center text-stone-500 mb-2">
@@ -195,7 +180,6 @@
       function main() {
         if (!new URL(url).pathname.includes("add.html")) {
           branded();
-          document.querySelector("#faq").href = "https://sharecarts.com/how-to/share-amazon-fresh-cart.html#faq";
           return;
         }
         
