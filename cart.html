@@ -78,7 +78,7 @@
         <!-- Regular AMAZON -->
         <a
           id="amz"
-          href="https://amazon.com"
+          href=""
           class="hidden cursor-pointer w-full mt-3 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl after:content-['_➜']"
           >Continue to Amazon<span id="tld"></span
         ></a>
@@ -138,7 +138,7 @@
     <p class="text-xs text-center text-stone-500 mb-2">
       As an Amazon Associate I earn from qualifying purchases.
     </p>
-    <footer class="p-3 text-xs font-normal border-t">
+    <footer class="p-3 text-xs text-center font-normal border-t">
       <span>
         © Share Carts, 2025 |
         <a class="underline" href="mailto:support@sharecarts.com">Contact Us</a>
@@ -314,12 +314,10 @@
         almBrandId.value = id;
         ingredients.value = JSON.stringify(payload);
         tag.value = associateTag;
-
-        // update meta tags
-        document.title = `${document.title} ${brandName}`;
         document.querySelector(
           'input[type="submit"]'
         ).value = `Continue to Amazon ${brandName} ➜`;
+        document.title = `${document.title} ${brandName}`;
       }
 
       if (url) {
