@@ -79,7 +79,7 @@
         <a
           id="amz"
           href="https://amazon.com"
-          class="cursor-pointer w-full mt-3 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl after:content-['_➜']"
+          class="hidden cursor-pointer w-full mt-3 rounded-xl block text-center font-medium bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl after:content-['_➜']"
           >Continue to Amazon<span id="tld"></span
         ></a>
 
@@ -212,9 +212,6 @@
         associateTag = "test";
       }
 
-      const amz = document.querySelector("a#amz");
-      const freshWF = document.querySelector("form#freshWF");
-
       function updateTotalQuantity() {
         // parse total items
         let totalQuantity = 0;
@@ -241,9 +238,10 @@
           document.querySelector("#faq").href = "https://sharecarts.com/how-to/share-amazon-fresh-cart.html#faq";
           return;
         }
-
-        url = `${url}AssociateTag=${associateTag}`;
-        amz.setAttribute("href", url); // update url
+        
+        const amz = document.querySelector("a#amz");
+        amz.classList.remove("hidden");
+        amz.setAttribute("href", `${url}AssociateTag=${associateTag}`); // update url
 
         let tld = document.querySelector("#tld");
         if (new URL(url).hostname.split(".").length > 3) {
@@ -261,6 +259,7 @@
       }
 
       function branded() {
+        const freshWF = document.querySelector("form#freshWF");
         const payload = {
           ingredients: [],
           saved: false,
@@ -309,11 +308,8 @@
         // update total quantity
         updateTotalQuantity();
 
-        // switch button
-        amz.classList.add("hidden");
-        freshWF.classList.remove("hidden");
-
         // update form
+        freshWF.classList.remove("hidden");
         freshWF.action = `https://${locale}/afx/ingredients/landing`;
         almBrandId.value = id;
         ingredients.value = JSON.stringify(payload);
