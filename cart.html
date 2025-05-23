@@ -238,6 +238,7 @@
       function main() {
         if (!new URL(url).pathname.includes("add.html")) {
           branded();
+          document.querySelector("#faq").href = "https://sharecarts.com/how-to/share-amazon-fresh-cart.html#faq";
           return;
         }
 
@@ -270,7 +271,6 @@
         let id;
         let brandName;
         const locale = new URL(url).hostname;
-        const faq = document.querySelector("#faq");
         if (new URL(url).pathname.includes("fresh")) {
           if (locale == "www.amazon.in") {
             id = "ctnow";
@@ -278,13 +278,9 @@
             id = "QW1hem9uIEZyZXNo";
           }
           brandName = "Fresh";
-          faq.href =
-            "https://sharecarts.com/how-to/share-amazon-fresh-cart.html#faq";
         } else {
           id = "VUZHIFdob2xlIEZvb2Rz";
           brandName = "Whole Foods";
-          faq.href =
-            "https://sharecarts.com/how-to/share-amazon-whole-foods-cart.html#faq";
         }
         const almBrandId = document.querySelector("#almBrandId");
         const ingredients = document.querySelector("#ingredients");
