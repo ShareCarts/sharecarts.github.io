@@ -33,10 +33,10 @@
         <div class="hidden sm:block">
           <button
             id="copyButton"
-            class="text-xs font-medium mx-auto w-24 cursor-pointer mt-1 rounded-xl block text-center bg-gray-200 hover:bg-gray-300 py-1 text-base"
+            class="text-xs font-medium mx-auto w-24 cursor-pointer mt-1 rounded-xl block text-center bg-gray-200 hover:bg-gray-300 py-2 text-base"
           >
             Copy Link
-        </button>
+          </button>
         </div>
       </header>
       <span
@@ -74,61 +74,91 @@
         <span class="italic">Note</span>:
         <span id="noteMessage"></span>
       </div>
-      <div
-        class="mt-10 text-stone-900"
-      >
-        <h3 class="text-center text-amber-950 text-lg sm:text-xl tracking-tight font-bold mb-1">Help</h3>
+      <div class="mt-10 text-stone-900">
+        <h3
+          class="text-center text-amber-950 text-xl sm:text-2xl tracking-tight font-bold mb-1"
+        >
+          Help
+        </h3>
         <div class="space-y-4">
           <details class="text-sm">
-            <summary class="font-medium sm:text-base cursor-pointer hover:text-stone-600">What happens when I click 'Continue to Amazon'?</summary>
-            <p class="mt-1 pl-5">It will take you to a confirmation page on Amazon.</p>
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              What happens when I click 'Continue to Amazon'?
+            </summary>
+            <p class="mt-1 pl-5">
+              It will take you to a confirmation page on Amazon.
+            </p>
             <p class="pl-5 mt-1">
-              <mark id="instructions" class="font-medium">Click the 'Add To Cart' button.</mark>
+              <mark id="instructions" class="font-medium"
+                >Click the 'Add To Cart' button.</mark
+              >
             </p>
-            <p class="pl-5 mt-1 italic">It does not remove any items already in your cart.</p>
+            <p class="pl-5 mt-1 italic">
+              It does not remove any items already in your cart.
+            </p>
           </details>
 
           <details class="text-sm">
-            <summary class="font-medium sm:text-base cursor-pointer hover:text-stone-600">Does this cart link stay updated?</summary>
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              Does this cart link stay updated?
+            </summary>
             <p class="mt-1 pl-5">
-              <em>No</em>, the link reflects all cart items at the time it was created. To make changes, use the
+              <em>No</em>, the link reflects all cart items at the time it was
+              created. To make changes, use the
               <a
                 class="text-blue-600 hover:text-stone-800"
                 href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
                 target="_blank"
                 >extension</a
-              > to create a new link.
+              >
+              to create a new link.
             </p>
           </details>
 
           <details class="text-sm">
-            <summary class="font-medium sm:text-base cursor-pointer hover:text-stone-600">Can I share my groceries?</summary>
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              Can I share my groceries?
+            </summary>
             <p class="mt-1 pl-5">
-              <em>Yes</em>, in addition to the main Amazon website, carts from Amazon Fresh and Whole Foods can also be shared.
-              Use the 
+              <em>Yes</em>, in addition to the main Amazon website, carts from
+              Amazon Fresh and Whole Foods can also be shared. Use the
               <a
                 class="text-blue-600 hover:text-stone-800"
                 href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
                 target="_blank"
                 >extension</a
-              > to create a grocery cart link.
+              >
+              to create a grocery cart link.
             </p>
           </details>
 
           <details class="text-sm">
-            <summary class="font-medium sm:text-base cursor-pointer hover:text-stone-600">Have a different question?</summary>
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              Have a different question?
+            </summary>
             <p class="mt-1 pl-5">
-              Reach out <a
-              class="text-blue-600 hover:text-stone-800"
-              target="_blank"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform?pli=1"
-              >here</a> and we’ll get back to you as soon as possible.
+              Reach out
+              <a
+                class="text-blue-600 hover:text-stone-800"
+                target="_blank"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform?pli=1"
+                >here</a
+              >
+              and we’ll get back to you as soon as possible.
             </p>
           </details>
-      </div>
-      <p class="mt-4 text-[10px] font-light text-center text-stone-400">
-        As an Amazon Associate I earn from qualifying purchases.
-      </p>
+        </div>
+        <p class="mt-4 text-[10px] font-light text-center text-stone-400">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
       </div>
     </div>
     <footer class="mt-2 p-3 text-xs text-center font-light border-t">
@@ -233,7 +263,12 @@
 
         const amz = document.querySelector("a#amz");
         amz.classList.remove("hidden");
-        amz.setAttribute("href", `${url}AssociateTag=${associateTag}#:~:text=${encodeURIComponent('Add To Cart')}`); // update url
+        amz.setAttribute(
+          "href",
+          `${url}AssociateTag=${associateTag}#:~:text=${encodeURIComponent(
+            "Add To Cart"
+          )}`
+        ); // update url
 
         let tld = document.querySelector("#tld");
         if (new URL(url).hostname.split(".").length > 3) {
@@ -299,7 +334,8 @@
         document.querySelector(
           'input[type="submit"]'
         ).value = `Continue to Amazon ${brandName} ➜`;
-        document.querySelector('#instructions').textContent = "Click the 'Add selected items to cart' button.";
+        document.querySelector("#instructions").textContent =
+          "Click the 'Add selected items to cart' button.";
         document.title = `${document.title} ${brandName}`;
       }
 
