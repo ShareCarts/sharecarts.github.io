@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>Continue to Amazon</title>
-    <meta property="og:title" content="Continue to Amazon" />
-    <meta property="og:description" content="Shareable Amazon Cart Link" />
+    <meta
+      property="og:title"
+      content="I want to share my cart with you! Check it out!"
+    />
     <meta property="og:type" content="website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
@@ -30,12 +32,12 @@
     <div class="min-h-[95vh] py-4 px-3">
       <header class="flex justify-between">
         <div></div>
-        <div class="hidden sm:block">
+        <div>
           <button
-            id="copyButton"
-            class="text-xs font-medium mx-auto w-20 cursor-pointer mt-1 rounded-full block text-center bg-gray-200 hover:bg-gray-300 py-2 text-base"
+            id="shareButton"
+            class="text-xs font-medium mx-auto w-24 cursor-pointer mt-1 rounded-full block text-center bg-gray-200 hover:bg-gray-300 py-2 text-base"
           >
-            Copy Link
+            Tell a Friend
           </button>
         </div>
       </header>
@@ -110,7 +112,8 @@
               <em>No</em>, the link reflects all cart items at the time it was
               created.
             </p>
-            <p class="pl-5">To make changes, use the
+            <p class="pl-5">
+              To make changes, use the
               <a
                 class="text-blue-600 hover:text-stone-800"
                 href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
@@ -128,9 +131,11 @@
               Can I share my cart?
             </summary>
             <p class="leading-7 pl-5">
-              <em>Yes</em>, <strong>all</strong> Amazon carts and items can be shared!
+              <em>Yes</em>, <strong>all</strong> Amazon carts and items can be
+              shared!
             </p>
-             <p class="pl-5">Use the
+            <p class="pl-5">
+              Use the
               <a
                 class="text-blue-600 hover:text-stone-800"
                 href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
@@ -354,11 +359,13 @@
         noteMessage.textContent = decodeURIComponent(noteParam);
       }
 
-      // COPY ACTION
-      const copyButton = document.querySelector("#copyButton");
-      copyButton.addEventListener("click", async (event) => {
-        await navigator.clipboard.writeText(window.location.href);
-        copyButton.textContent = "Copied!";
+      // SHARE ACTION
+      const shareButton = document.querySelector("#shareButton");
+      shareButton.addEventListener("click", async (event) => {
+        await navigator.share({
+          title: "I want to share my cart with you! Check it out!",
+          url: window.location.href,
+        });
       });
     </script>
   </body>
