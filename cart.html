@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="font-[Inter]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Continue to Amazon</title>
+    <meta property="og:title" content="Continue to Amazon" />
+    <meta property="og:description" content="Shareable Amazon Cart Link" />
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-M2TZ6RBVLX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-M2TZ6RBVLX");
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full w-full max-w-2xl mx-auto">
+    <div class="min-h-[95vh] py-4 px-3">
+      <header class="flex justify-between">
+        <div></div>
+        <div class="hidden sm:block">
+          <button
+            id="copyButton"
+            class="text-xs font-medium mx-auto w-20 cursor-pointer mt-1 rounded-full block text-center bg-gray-200 hover:bg-gray-300 py-2 text-base"
+          >
+            Copy Link
+          </button>
+        </div>
+      </header>
+      <span
+        class="mt-10 text-amber-950 text-xl sm:text-3xl font-extrabold block text-center tracking-tight"
+        >🎉 Someone shared <span id="quantity"></span> with you!
+      </span>
+      <div
+        class="bg-amber-50 px-2 py-8 sm:px-20 rounded-md mt-5 shadow-sm border-2 border-dashed border-amber-200"
+      >
+        <!-- Regular AMAZON -->
+        <a
+          id="amz"
+          target="_blank"
+          href=""
+          class="hidden cursor-pointer w-full rounded-full block text-center font-semibold bg-amber-400 hover:bg-amber-500 px-4 py-3 text-amber-950 text-lg sm:text-xl after:content-['_➜']"
+          >Continue to Amazon<span id="tld"></span
+        ></a>
+
+        <!-- Fresh or WF -->
+        <form id="freshWF" class="hidden" method="POST" action="">
+          <input type="hidden" id="ingredients" name="ingredients" value="" />
+          <input type="hidden" id="almBrandId" name="almBrandId" value="" />
+          <input type="hidden" id="tag" name="associateTag" value="" />
+          <input
+            type="submit"
+            class="cursor-pointer w-full rounded-full block text-center font-semibold bg-amber-400 hover:bg-amber-500 py-3 text-amber-950 text-lg sm:text-xl"
+            value=""
+          />
+        </form>
+      </div>
+      <div
+        id="note"
+        class="hidden mt-5 p-4 bg-stone-50 rounded-md shadow-sm border border-dashed border-stone-100 text-sm"
+      >
+        <span class="italic">Note</span>:
+        <span id="noteMessage"></span>
+      </div>
+      <div class="mt-10 text-stone-900">
+        <h3
+          class="text-center text-amber-950 text-xl sm:text-2xl tracking-tight font-bold mb-2"
+        >
+          Help
+        </h3>
+        <div class="space-y-4">
+          <details class="text-sm">
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              What happens when I click 'Continue to Amazon'?
+            </summary>
+            <p class="leading-7 pl-5">
+              It will take you to a confirmation page on Amazon.
+            </p>
+            <p class="leading-7 pl-5">
+              <mark id="instructions" class="bg-amber-200 font-medium"
+                >Click the 'Add To Cart' button.</mark
+              >
+            </p>
+            <p class="pl-5 italic">
+              It does not remove any items already in your cart.
+            </p>
+          </details>
+
+          <details class="text-sm">
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              Does this cart link stay updated?
+            </summary>
+            <p class="leading-7 pl-5">
+              <em>No</em>, the link reflects all cart items at the time it was
+              created.
+            </p>
+            <p class="pl-5">To make changes, use the
+              <a
+                class="text-blue-600 hover:text-stone-800"
+                href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
+                target="_blank"
+                >extension</a
+              >
+              to create a new link.
+            </p>
+          </details>
+
+          <details class="text-sm">
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              Can I share my cart?
+            </summary>
+            <p class="leading-7 pl-5">
+              <em>Yes</em>, <strong>all</strong> Amazon carts and items can be shared!
+            </p>
+             <p class="pl-5">Use the
+              <a
+                class="text-blue-600 hover:text-stone-800"
+                href="https://chromewebstore.google.com/detail/share-amazon-cart/bkcdmpcbhmafdmpekienmgfopacinonn"
+                target="_blank"
+                >extension</a
+              >
+              to create a shareable cart link.
+            </p>
+          </details>
+
+          <details class="text-sm">
+            <summary
+              class="font-medium sm:text-base cursor-pointer hover:text-stone-600"
+            >
+              Have a different question?
+            </summary>
+            <p class="leading-7 pl-5">
+              Reach out
+              <a
+                class="text-blue-600 hover:text-stone-800"
+                target="_blank"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfgVkcPvPheLw9ZHLaRdNR01EJGiT9i0MiUyf64GFaiwyw4Mg/viewform?pli=1"
+                >here</a
+              >
+              and we’ll get back to you as soon as possible.
+            </p>
+          </details>
+        </div>
+        <p class="mt-4 text-[10px] font-light text-center text-stone-400">
+          As an Amazon Associate I earn from qualifying purchases.
+        </p>
+      </div>
+    </div>
+    <footer class="mt-2 p-3 text-xs text-center font-light border-t">
+      <span>
+        © Share Carts, 2025 |
+        <a class="underline" href="mailto:support@sharecarts.com">Contact Us</a>
+        |
+        <a class="underline" href="/privacy.html" target="_blank"
+          >Privacy Policy</a
+        >
+      </span>
+    </footer>
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      let url = params.get("u");
+      url = decodeURI(url);
+      const parts = new URL(url).searchParams;
+      const noteParam = params.get("note");
+      const localMarkets = {
+        // US
+        QW1hem9uIEZyZXNo: "Fresh",
+        VUZHIFdob2xlIEZvb2Rz: "Whole Foods",
+        cfr1WQ8obY: "Everyday Essentials",
+        hJDG4SCSoK: "Metropolitan Market",
+        U2F2ZSBNYXJ0: "Save Mart",
+        WPcGbYPLzk: "Rite Aid",
+        WQppp1xWMK: "Lucky",
+        RDMXfFItJA: "Cardenas Market",
+        hY0j6LN5aS: "New Seasons Market",
+        pNHniBOEyG: "Foodmaxx",
+        YnJpc3RvbCBmYXJtcw: "Bristol Farms",
+        QmFydGVsbCBEcnVncw: "Bartell's",
+        V2VpcyBNYXJrZXRz: "Weis",
+        // UK
+        TW9ycmlzb25z: "Morrisons",
+        Q29vcA: "Coop",
+        ejEjkXsQmO: "Iceland",
+        // Singapore
+        KQENHJywk4: "Watsons",
+        WDpqStVxNA: "Little Farms",
+        // India
+        ctnow: "Fresh",
+        foq3ZnlEaO: "FreshMeat",
+        // Germany
+        dGVndXQuLi4: "Tegut",
+        tIldpRhPE0: "konuspr",
+        // France
+        TW9ub3ByaXg: "Monoprix",
+        // Japan
+        "44OQ44Ot44O8": "Valor",
+        "44Op44Kk44OV": "Life",
+        YuevU6kVCi: "ARCS",
+        "5oiQ5Z1O551z5LqV": "Seijo Ishii",
+        qg6iObTGYS: "Marukyo",
+        // Italy
+        VTIgU3VwZXJtZXJjYXRv: "Unes",
+        UGFtIFBBTk9SQU1B: "Pam Panorama",
+        VHVvZMOs: "Tuodi",
+        // Spain
+        TWVyY2FkbyBkZSBMYSBQYXo: "Mercado de la Paz",
+        TGEgUGxhemEgZGUgRGlh: "Dia",
+        // Mexico
+        qhu7HKnZL6: "Justo",
+        // UAE
+        Wf2HUUZ9yC: "Lulu",
+        sAuWWBROaG: "Amazon Now",
+      };
+
+      let associateTag = window.location.href.includes("sharecarts.com")
+        ? "sharecarts0c-20"
+        : "none";
+
+      if (new URL(url).hostname == "www.amazon.in") {
+        associateTag = "test";
+      }
+
+      function updateTotalQuantity() {
+        // parse total items
+        let totalQuantity = 0;
+        for (const [key, value] of parts) {
+          if (key.includes("Quantity")) {
+            totalQuantity = totalQuantity + parseInt(value);
+          }
+        }
+
+        if (totalQuantity == 1) {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `${totalQuantity} item`;
+        } else {
+          document.querySelector(
+            "#quantity"
+          ).textContent = `${totalQuantity} items`;
+        }
+      }
+
+      function main() {
+        if (!new URL(url).pathname.includes("add.html")) {
+          branded();
+          return;
+        }
+
+        const amz = document.querySelector("a#amz");
+        amz.classList.remove("hidden");
+        amz.setAttribute(
+          "href",
+          `${url}AssociateTag=${associateTag}#:~:text=${encodeURIComponent(
+            "Add To Cart"
+          )}`
+        ); // update url
+
+        let tld = document.querySelector("#tld");
+        if (new URL(url).hostname.split(".").length > 3) {
+          tld.textContent = `.${new URL(url).hostname.split(".")[2]}.${new URL(
+            url
+          ).hostname
+            .split(".")
+            .pop()}`; // update tld
+        } else {
+          tld.textContent = `.${new URL(url).hostname.split(".").pop()}`; // update tld
+        }
+
+        // update total quantity
+        updateTotalQuantity();
+      }
+
+      function branded() {
+        const pathName = new URL(url).pathname.slice(1);
+        const freshWF = document.querySelector("form#freshWF");
+        const payload = {
+          ingredients: [],
+          saved: false,
+          recipeComposition: {
+            saved: false,
+          },
+        };
+        const brandId = localMarkets[pathName] ? pathName : "QW1hem9uIEZyZXNo";
+        const brandName = localMarkets[pathName]
+          ? localMarkets[pathName]
+          : "Fresh";
+
+        // insert ingredients
+        let index = 1;
+        for (const [key, value] of parts) {
+          if (key.includes("ASIN")) {
+            payload.ingredients.push({
+              name: "Of This Item",
+              asinOverrides: [value],
+              componentIndex: 0,
+              quantityList: [
+                {
+                  unit: "COUNT",
+                  amount: parseInt(parts.get(`Quantity.${index}`) ?? 1),
+                },
+              ],
+              exclusiveOverride: false,
+            });
+            index++;
+          }
+        }
+
+        // update total quantity
+        updateTotalQuantity();
+
+        // update form
+        freshWF.classList.remove("hidden");
+        freshWF.action = `https://${
+          new URL(url).hostname
+        }/afx/ingredients/landing`;
+        document.querySelector("#almBrandId").value = brandId;
+        document.querySelector("#ingredients").value = JSON.stringify(payload);
+        document.querySelector("#tag").value = associateTag;
+        document.querySelector(
+          'input[type="submit"]'
+        ).value = `Continue to Amazon ${brandName} ➜`;
+        document.querySelector("#instructions").textContent =
+          "Click the 'Add selected items to cart' button.";
+        document.title = `${document.title} ${brandName}`;
+      }
+
+      if (url) {
+        main();
+      }
+
+      // NOTE
+      if (noteParam) {
+        const note = document.querySelector("#note");
+        const noteMessage = document.querySelector("#noteMessage");
+        note.classList.remove("hidden");
+        noteMessage.textContent = decodeURIComponent(noteParam);
+      }
+
+      // COPY ACTION
+      const copyButton = document.querySelector("#copyButton");
+      copyButton.addEventListener("click", async (event) => {
+        await navigator.clipboard.writeText(window.location.href);
+        copyButton.textContent = "Copied!";
+      });
+    </script>
+  </body>
+</html>
