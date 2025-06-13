@@ -261,7 +261,7 @@
               Contents:
             </span>
             <ul class="leading-6 text-sm pl-5 flex flex-col list-disc">
-              <li><span class="italic">From:</span> Amazon<span id="tld_modal"></span></li>
+              <li><span class="italic">From:</span> <span id="from_modal"></span></li>
               <li>
                 <span class="italic">Quantity:</span>
                 <span id="quantity_modal"></span>
@@ -384,11 +384,11 @@
             .split(".")
             .pop()}`;
           document.querySelector("#tld").textContent = `.${region}`;
-          document.querySelector("#tld_modal").textContent = `.${region}`;
+          document.querySelector("#from_modal").textContent = `Amazon.${region}`;
         } else {
           region = `${new URL(url).hostname.split(".").pop()}`;
           document.querySelector("#tld").textContent = `.${region}`;
-          document.querySelector("#tld_modal").textContent = `.${region}`;
+          document.querySelector("#from_modal").textContent = `Amazon.${region}`;
         }
 
         // update url
@@ -470,8 +470,11 @@
         document.querySelector(
           'input[type="submit"]'
         ).value = `Continue to Amazon ${brandName} ➜`;
+
+        // update copy
         document.querySelector("#instructions").textContent =
           "Click the 'Add selected items to cart' button.";
+        document.querySelector("#from_modal").textContent = `Amazon ${brandName}`;
         document.title = `${document.title} ${brandName}`;
       }
 
