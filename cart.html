@@ -488,6 +488,7 @@
         const amz = document.querySelector("a#amz");
         // update url
         amz.classList.remove("hidden");
+        amz.setAttribute("rel", "noreferrer");
         amz.textContent = "Continue to Newegg";
         amz.setAttribute("href", `https://click.linksynergy.com/deeplink?id=AV2nh8Bm4bQ&mid=44583&murl=${encodeURIComponent(url)}`);
       }
