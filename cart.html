@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="font-[Inter]" lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Continue to Amazon</title>
@@ -35,13 +35,18 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-inter: "Inter", sans-serif;
+      }
+    </style>
     <link
       href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/components/tooltip.css,npm/daisyui@5/components/modal.css,npm/daisyui@5/theme/light.css"
       rel="stylesheet"
       type="text/css"
     />
   </head>
-  <body class="h-full w-full max-w-2xl mx-auto">
+  <body class="font-inter h-full w-full max-w-2xl mx-auto">
     <div class="min-h-[95vh] py-4 px-3">
       <header class="flex justify-between">
         <div id="cart_info" class="tooltip tooltip-right" data-tip="Learn More">
