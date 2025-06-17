@@ -484,8 +484,20 @@
         document.title = `${document.title} ${brandName}`;
       }
 
+      function newEgg() {
+        const amz = document.querySelector("a#amz");
+        // update url
+        amz.classList.remove("hidden");
+        amz.textContent = "Continue to Newegg";
+        amz.setAttribute("href", `https://click.linksynergy.com/deeplink?id=AV2nh8Bm4bQ&mid=44583&murl=${encodeURIComponent(url)}`);
+      }
+
       if (url) {
-        main();
+        if (url.includes("amazon")) {
+          main();
+        } else if (url.includes("newegg")) {
+          newEgg();
+        }
       }
 
       // NOTE
