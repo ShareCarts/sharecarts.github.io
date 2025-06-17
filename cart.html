@@ -132,7 +132,7 @@
           Help
         </h3>
         <div class="space-y-4">
-          <details class="text-sm">
+          <details id="help_first" class="text-sm">
             <summary
               class="cursor-pointer hover:text-stone-600"
             >
@@ -213,7 +213,7 @@
             </p>
           </details>
         </div>
-        <p class="mt-4 text-[10px] font-light text-center text-stone-400">
+        <p id="disclosure" class="mt-4 text-[10px] font-light text-center text-stone-400">
           As an Amazon Associate I earn from qualifying purchases.
         </p>
       </div>
@@ -495,6 +495,9 @@
 
         // update meta
         document.title = "Continue to Newegg";
+        document.querySelector('#help_first').classList.add('hidden');
+        document.querySelector('#cart_info').classList.add('hidden');
+        document.querySelector('#disclosure').textContent = "We may earn an affiliate commission from any purchases facilitated through the use of this website.";
       }
 
       if (url) {
