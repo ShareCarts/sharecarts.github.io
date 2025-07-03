@@ -66,7 +66,8 @@
           </svg>
         </div>
         <div class="text-sm mt-1 sm:text-lg italic font-bold tracking-tight">
-          Someone shared <span class="text-stone-500 underline" id="quantity"></span> with you!
+          Someone shared
+          <span class="text-stone-500 underline" id="quantity"></span> with you!
         </div>
         <div
           id="share_button"
@@ -91,7 +92,7 @@
       </header>
       <span
         class="mt-10 sm:mt-15 text-amber-950 text-2xl sm:text-3xl font-extrabold block text-center tracking-tight"
-        >
+      >
         Add them to your cart below
       </span>
       <div
@@ -132,50 +133,51 @@
         >
           Help
         </h3>
-        <div class="space-y-3">
+        <div class="space-y-3 font-light">
           <details id="help_first" class="text-sm">
-            <summary
-              class="cursor-pointer hover:text-stone-600"
-            >
-              How do I get <span class="font-medium">free shipping</span> on this cart?
+            <summary class="cursor-pointer hover:text-stone-600">
+              How do I get <span class="font-medium">free shipping</span> on
+              this cart?
             </summary>
-            <p class="leading-7 pl-5">
-              Get free shipping with an <a 
-                                          class="text-blue-600 hover:text-stone-800"
-                                          href="https://www.amazon.com/amazonprime?&linkCode=ll2&tag=sharecarts0c-20&linkId=f825adbd87d3495a373240042c6ca063&language=en_US&ref_=as_li_ss_tl"
-                                          target="_blank">Amazon Prime</a> membership!
+            <p class="leading-7 pl-5 text-stone-800">
+              Get free shipping with an
+              <a
+                class="text-blue-600 hover:text-stone-800"
+                href="https://www.amazon.com/amazonprime?&linkCode=ll2&tag=sharecarts0c-20&linkId=f825adbd87d3495a373240042c6ca063&language=en_US&ref_=as_li_ss_tl"
+                target="_blank"
+                >Amazon Prime</a
+              >
+              membership!
             </p>
           </details>
           <details id="help_second" class="text-sm">
-            <summary
-              class="cursor-pointer hover:text-stone-600"
-            >
-              What happens when I click '<span class="italic">Continue to Amazon</span>'?
+            <summary class="cursor-pointer hover:text-stone-600">
+              What happens when I click '<span class="italic"
+                >Continue to Amazon</span
+              >'?
             </summary>
-            <p class="leading-7 pl-5">
+            <p class="leading-7 pl-5 text-stone-800">
               It will take you to a confirmation page on Amazon.
             </p>
-            <p class="leading-7 pl-5">
-              <mark id="instructions" class="bg-amber-200 font-medium"
+            <p class="leading-7 pl-5 text-stone-800">
+              <mark id="instructions" class="bg-amber-200 font-medium p-1"
                 >Click the 'Add To Cart' button.</mark
               >
             </p>
-            <p class="pl-5 italic">
+            <p class="pl-5 italic text-stone-800">
               It does not remove any items already in your cart.
             </p>
           </details>
 
           <details class="text-sm">
-            <summary
-              class="cursor-pointer hover:text-stone-600"
-            >
+            <summary class="cursor-pointer hover:text-stone-600">
               Does this cart link stay updated?
             </summary>
-            <p class="leading-7 pl-5">
+            <p class="leading-7 pl-5 text-stone-800">
               <em>No</em>, the link reflects all cart items at the time it was
               created.
             </p>
-            <p class="pl-5">
+            <p class="pl-5 text-stone-800">
               To make changes, use the
               <a
                 class="text-blue-600 hover:text-stone-800"
@@ -188,16 +190,14 @@
           </details>
 
           <details class="text-sm">
-            <summary
-              class="cursor-pointer hover:text-stone-600"
-            >
+            <summary class="cursor-pointer hover:text-stone-600">
               Can I share my cart?
             </summary>
-            <p class="leading-7 pl-5">
+            <p class="leading-7 pl-5 text-stone-800">
               <em>Yes</em>, <strong>all</strong> Amazon carts and items can be
               shared!
             </p>
-            <p class="pl-5">
+            <p class="pl-5 text-stone-800">
               Use the
               <a
                 class="text-blue-600 hover:text-stone-800"
@@ -210,12 +210,10 @@
           </details>
 
           <details class="text-sm">
-            <summary
-              class="cursor-pointer hover:text-stone-600"
-            >
+            <summary class="cursor-pointer hover:text-stone-600">
               Have a different question?
             </summary>
-            <p class="leading-7 pl-5">
+            <p class="leading-7 pl-5 text-stone-800">
               Reach out
               <a
                 class="text-blue-600 hover:text-stone-800"
@@ -227,7 +225,10 @@
             </p>
           </details>
         </div>
-        <p id="disclosure" class="mt-4 text-[10px] font-light text-center text-stone-400">
+        <p
+          id="disclosure"
+          class="mt-4 text-[10px] font-light text-center text-stone-400"
+        >
           As an Amazon Associate I earn from qualifying purchases.
         </p>
       </div>
@@ -267,9 +268,15 @@
             <span class="block text-amber-950 tracking-tight underline"
               >Receive:</span
             >
-            <ol class="leading-6 text-sm pl-5 flex flex-col list-decimal marker:font-bold">
-              <li>Click '<span class="font-medium">Continue to Amazon ➜</span>'</li>
-              <li>Click '<span class="font-medium">Add To Cart</span>' on Amazon</li>
+            <ol
+              class="leading-6 text-sm pl-5 flex flex-col list-decimal marker:font-bold"
+            >
+              <li>
+                Click '<span class="font-medium">Continue to Amazon ➜</span>'
+              </li>
+              <li>
+                Click '<span class="font-medium">Add To Cart</span>' on Amazon
+              </li>
               <li>Items received!</li>
             </ol>
           </div>
@@ -280,7 +287,10 @@
               Contents:
             </span>
             <ul class="leading-6 text-sm pl-5 flex flex-col list-disc">
-              <li><span class="italic font-medium">From:</span> <span id="from_modal"></span></li>
+              <li>
+                <span class="italic font-medium">From:</span>
+                <span id="from_modal"></span>
+              </li>
               <li>
                 <span class="italic font-medium">Quantity:</span>
                 <span id="quantity_modal"></span>
@@ -403,11 +413,15 @@
             .split(".")
             .pop()}`;
           document.querySelector("#tld").textContent = `.${region}`;
-          document.querySelector("#from_modal").textContent = `Amazon.${region}`;
+          document.querySelector(
+            "#from_modal"
+          ).textContent = `Amazon.${region}`;
         } else {
           region = `${new URL(url).hostname.split(".").pop()}`;
           document.querySelector("#tld").textContent = `.${region}`;
-          document.querySelector("#from_modal").textContent = `Amazon.${region}`;
+          document.querySelector(
+            "#from_modal"
+          ).textContent = `Amazon.${region}`;
         }
 
         // update url
@@ -494,41 +508,50 @@
         // update copy
         document.querySelector("#instructions").textContent =
           "Click the 'Add selected items to cart' button.";
-        document.querySelector("#from_modal").textContent = `Amazon ${brandName}`;
+        document.querySelector(
+          "#from_modal"
+        ).textContent = `Amazon ${brandName}`;
         document.title = `${document.title} ${brandName}`;
       }
 
       function newEgg() {
         const amz = document.querySelector("a#amz");
-        
+
         // update url
         amz.classList.remove("hidden");
         amz.setAttribute("rel", "noreferrer");
         amz.textContent = "Continue to Newegg";
-        amz.setAttribute("href", `https://click.linksynergy.com/deeplink?id=AV2nh8Bm4bQ&mid=44583&murl=${encodeURIComponent(url)}`);
+        amz.setAttribute(
+          "href",
+          `https://click.linksynergy.com/deeplink?id=AV2nh8Bm4bQ&mid=44583&murl=${encodeURIComponent(
+            url
+          )}`
+        );
 
         // remove colors
-        document.querySelector('#container').classList.remove('bg-amber-50');
-        document.querySelector('#container').classList.remove('border-amber-200');
-        amz.classList.remove('bg-amber-400');
-        amz.classList.remove('hover:bg-amber-500');
-        amz.classList.remove('text-amber-950');
+        document.querySelector("#container").classList.remove("bg-amber-50");
+        document
+          .querySelector("#container")
+          .classList.remove("border-amber-200");
+        amz.classList.remove("bg-amber-400");
+        amz.classList.remove("hover:bg-amber-500");
+        amz.classList.remove("text-amber-950");
 
         // add colors
-        document.querySelector('#container').classList.add('bg-[#F6F6F6]');
-        document.querySelector('#container').classList.add('border-[#CDCCCC]');
-        amz.classList.add('bg-[#004B7D]');
-        amz.classList.add('hover:bg-[#20304D]');
-        amz.classList.add('text-white');
-        
-        
+        document.querySelector("#container").classList.add("bg-[#F6F6F6]");
+        document.querySelector("#container").classList.add("border-[#CDCCCC]");
+        amz.classList.add("bg-[#004B7D]");
+        amz.classList.add("hover:bg-[#20304D]");
+        amz.classList.add("text-white");
+
         // update meta
         document.title = "Continue to Newegg";
-        document.querySelector('#help_first').classList.add('hidden');
-        document.querySelector('#help_second').classList.add('hidden');
-        document.querySelector('#cart_info svg').classList.add('hidden');
-        document.querySelector('#quantity').textContent = "a cart";
-        document.querySelector('#disclosure').textContent = "We may earn an affiliate commission from any purchases facilitated through the use of this website.";
+        document.querySelector("#help_first").classList.add("hidden");
+        document.querySelector("#help_second").classList.add("hidden");
+        document.querySelector("#cart_info svg").classList.add("hidden");
+        document.querySelector("#quantity").textContent = "a cart";
+        document.querySelector("#disclosure").textContent =
+          "We may earn an affiliate commission from any purchases facilitated through the use of this website.";
       }
 
       if (url) {
