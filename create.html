@@ -81,10 +81,10 @@
         <span class="italic">at once</span>. Just enter the URL of each item,
         set your quantity, and share your link!
       </p>
-      <p class="mt-2 text-sm sm:text-base">
-        <span class="underline uppercase">New</span>: To share your
-        <span class="italic">groceries</span>, switch your cart to either Amazon
-        Fresh or Whole Foods.
+      <p class="mt-2 text-sm">
+        <span class="underline uppercase text-red-500">New</span>: To share your
+        <span class="italic">groceries</span>, switch the dropdown below to
+        either Amazon Fresh or Whole Foods.
       </p>
       <div id="app">
         <h2
@@ -153,46 +153,49 @@
             </div>
             <button
               @click="addProduct"
-              class="rounded bg-black text-white h-10 w-20 sm:w-40 text-sm hover:opacity-70"
+              class="rounded-2xl bg-black text-white h-10 w-20 sm:w-40 text-sm hover:opacity-70"
             >
               Add Item
             </button>
           </div>
 
-          <h3
-            v-if="cart.products.length > 0"
-            class="text-center text-base mt-5 text-stone-700 font-medium"
-          >
-            Current Cart
-            <span v-if="cart.products.length > 0" class="italic text-sm"
-              >({{ totalQuantity }} items)</span
-            >:
-          </h3>
-          <ul class="text-sm">
-            <li
-              v-for="(product, index) in cart.products"
-              :key="index"
-              class="mt-1"
+          <details v-if="cart.products.length > 0">
+            <summary
+              class="text-center text-base mt-5 text-stone-700 font-medium cursor-pointer hover:opacity-80"
             >
-              <div class="truncate">
-                <span class="font-semibold">{{ index + 1 }}.</span>
-                <a
-                  :href="productURL(index)"
-                  target="_blank"
-                  class="text-blue-700 ml-1 hover:opacity-80 truncate"
-                  >{{ product.url }}</a
-                >
-              </div>
-              <span class="italic text-xs ml-3">Qty: </span>
-              <span class="text-xs">{{ product.quantity}} - </span>
-              <button
-                @click="removeProduct(index)"
-                class="text-xs underline text-stone-500 hover:opacity-80"
+              Current Cart
+              <span
+                v-if="cart.products.length > 0"
+                class="italic text-sm font-light"
+                >({{ totalQuantity }} items)</span
               >
-                Remove
-              </button>
-            </li>
-          </ul>
+            </summary>
+            <ul class="text-sm">
+              <li
+                v-for="(product, index) in cart.products"
+                :key="index"
+                class="mt-1"
+              >
+                <div class="truncate">
+                  <span class="font-semibold">{{ index + 1 }}.</span>
+                  <a
+                    :href="productURL(index)"
+                    target="_blank"
+                    class="text-blue-700 ml-1 hover:opacity-80 truncate"
+                    >{{ product.url }}</a
+                  >
+                </div>
+                <span class="italic text-xs ml-3">Qty: </span>
+                <span class="text-xs">{{ product.quantity}} - </span>
+                <button
+                  @click="removeProduct(index)"
+                  class="text-xs font-light underline text-stone-500 hover:opacity-80"
+                >
+                  Remove
+                </button>
+              </li>
+            </ul>
+          </details>
         </div>
         <div v-if="cart.products.length > 0">
           <h2
@@ -214,7 +217,7 @@
             <button
               @click="copyLink"
               :disabled="copiedLink"
-              class="block font-semibold mx-auto rounded w-40 bg-black text-sm p-2 text-white mt-4 hover:opacity-80 disabled:opacity-50"
+              class="block font-semibold mx-auto rounded-2xl w-40 bg-black text-sm p-2 text-white mt-4 hover:opacity-80 disabled:opacity-50"
             >
               {{ copiedLink ? 'Copied!' : 'Copy Link' }}
             </button>
