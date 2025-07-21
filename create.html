@@ -90,7 +90,7 @@
         <h2
           class="mt-5 sm:mt-8 tracking-tight font-display font-bold text-xl sm:text-2xl text-stone-700 text-center"
         >
-          🛠️ Create Link
+          🔗 Link To
         </h2>
 
         <select
@@ -113,9 +113,10 @@
           </div>
           <div
             v-else-if="cart.products.length > 0"
-            class="text-green-700 font-medium text-sm text-center mb-2"
+            class="text-sm text-center mb-2"
           >
-            Cart updated! Keep adding or get the share link below.
+            <span class="text-green-700">Cart updated!</span> Keep adding or get
+            the share link below.
           </div>
           <div class="flex gap-2 justify-between">
             <div class="w-4/5">
@@ -173,7 +174,8 @@
               <span
                 v-if="cart.products.length > 0"
                 class="italic text-sm font-light"
-                >({{ totalQuantity }} items)</span
+                >({{ totalQuantity }} {{ cart.products.length == 1 ? 'item' :
+                'items' }})</span
               >
             </summary>
             <ul class="text-sm">
