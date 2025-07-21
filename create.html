@@ -447,6 +447,11 @@
             await navigator.clipboard.writeText(shareLink.value);
             copiedLink.value = true;
             window.getSelection().selectAllChildren(link.value);
+            await fetch(
+              `https://docs.google.com/forms/d/e/1FAIpQLSdbncGpvCtblwKuDM-vqoWbeXII-ii3QpY1vDs87lGwGnTIvQ/formResponse?usp=pp_url&entry.1125089483=${encodeURIComponent(
+                shareLink.value
+              )}&entry.644830530=website`
+            );
           }
 
           // on changes, reset some state
