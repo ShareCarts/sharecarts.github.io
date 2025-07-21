@@ -174,8 +174,8 @@
               <span
                 v-if="cart.products.length > 0"
                 class="italic text-sm font-light"
-                >({{ totalQuantity }} {{ cart.products.length == 1 ? 'item' :
-                'items' }})</span
+                >({{ totalQuantity }} {{ totalQuantity == 1 ? 'item' : 'items'
+                }})</span
               >
             </summary>
             <ul class="text-sm">
