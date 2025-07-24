@@ -136,22 +136,6 @@
         <div class="space-y-3 font-light">
           <details id="help_first" class="text-sm">
             <summary class="cursor-pointer hover:text-stone-600">
-              How do I get <span class="font-medium">free shipping</span> on
-              this cart?
-            </summary>
-            <p class="leading-7 pl-5 text-stone-800">
-              Get free shipping with an
-              <a
-                class="text-blue-600 hover:text-stone-800"
-                href="https://www.amazon.com/amazonprime?&linkCode=ll2&tag=sharecarts0c-20&linkId=f825adbd87d3495a373240042c6ca063&language=en_US&ref_=as_li_ss_tl"
-                target="_blank"
-                >Amazon Prime</a
-              >
-              membership!
-            </p>
-          </details>
-          <details id="help_second" class="text-sm">
-            <summary class="cursor-pointer hover:text-stone-600">
               What happens when I click '<span class="italic"
                 >Continue to Amazon</span
               >'?
@@ -547,7 +531,6 @@
         // update meta
         document.title = "Continue to Newegg";
         document.querySelector("#help_first").classList.add("hidden");
-        document.querySelector("#help_second").classList.add("hidden");
         document.querySelector("#cart_info svg").classList.add("hidden");
         document.querySelector("#quantity").textContent = "a cart";
         document.querySelector("#disclosure").textContent =
